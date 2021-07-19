@@ -43,6 +43,9 @@ _start:
   csrr a0, mhartid
   la a1, _dtb
   jr s0
+  #csrw dpc, s0
+  #csrwi dcsr, 0x3
+  #dret
 
 .section .text.hang, "ax", @progbits
 .globl _hang

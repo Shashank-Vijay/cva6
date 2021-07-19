@@ -64,6 +64,9 @@ _init:
   la a1, _dtb
   li s1, DRAM_BASE
   jr s1
+  #csrw dpc, s1
+  #csrwi dcsr, 0x3
+  #dret
 
   .section .dtb
   .globl _dtb
